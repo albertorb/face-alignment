@@ -67,9 +67,6 @@ class FaceAlignment:
         else:
             pytorch_version = pytorch_version.rsplit('.', 1)[0]
 
-        if 'cuda' in device:
-            torch.backends.cudnn.benchmark = True
-
         # Get the face detector
         face_detector_module = __import__('face_alignment.detection.' + face_detector,
                                           globals(), locals(), [face_detector], 0)
